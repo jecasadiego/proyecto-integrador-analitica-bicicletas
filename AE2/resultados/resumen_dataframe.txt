@@ -1,0 +1,41 @@
+RESUMEN DEL DATAFRAME — AE2
+Dataset: t22000t/bike-sharing-tabular
+Enlace: https://huggingface.co/datasets/t22000t/bike-sharing-tabular
+Fecha de consulta: 2026-10-22
+Revisión: 6b645e0cedbc5208fcca11ac94544b088478bf61
+Configuración: default
+Split: train
+Muestra: no; split completo, sin filtros ni eliminación de registros.
+Filas: 17379
+Columnas: 17
+
+NOMBRES, TIPOS DE DATOS Y VALORES NULOS
+variable | tipo_pandas | valores_nulos
+instant | int64 | 0
+dteday | str | 0
+season | int64 | 0
+yr | int64 | 0
+mnth | int64 | 0
+hr | int64 | 0
+holiday | int64 | 0
+weekday | int64 | 0
+workingday | int64 | 0
+weathersit | int64 | 0
+temp | float64 | 0
+atemp | float64 | 0
+hum | float64 | 0
+windspeed | float64 | 0
+casual | int64 | 0
+registered | int64 | 0
+cnt | int64 | 0
+
+COBERTURA Y COHERENCIA BÁSICA
+Periodo: 2011-01-01 a 2012-12-31
+Fechas distintas: 731
+Horas de calendario en el periodo: 17544
+Horas observadas distintas: 17379
+Horas sin registro: 165 (no imputadas; no equivalen a cero alquileres)
+Duplicados fecha-hora: 0
+Filas con cnt distinto de casual + registered: 0
+
+Huella SHA-256 del DataFrame y esquema: 214519a79b5e490837238dca4650c655bf098f74fb63aa130a231e06ac5f5504

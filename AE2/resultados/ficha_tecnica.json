@@ -1,0 +1,139 @@
+{
+  "dataset_id": "t22000t/bike-sharing-tabular",
+  "enlace": "https://huggingface.co/datasets/t22000t/bike-sharing-tabular",
+  "fecha_consulta": "2026-10-22",
+  "revision": "6b645e0cedbc5208fcca11ac94544b088478bf61",
+  "configuracion": "default",
+  "split": "train",
+  "muestra": false,
+  "filas": 17379,
+  "columnas": 17,
+  "variables": [
+    {
+      "nombre": "instant",
+      "tipo_pandas": "int64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "dteday",
+      "tipo_pandas": "str",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "season",
+      "tipo_pandas": "int64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "yr",
+      "tipo_pandas": "int64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "mnth",
+      "tipo_pandas": "int64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "hr",
+      "tipo_pandas": "int64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "holiday",
+      "tipo_pandas": "int64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "weekday",
+      "tipo_pandas": "int64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "workingday",
+      "tipo_pandas": "int64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "weathersit",
+      "tipo_pandas": "int64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "temp",
+      "tipo_pandas": "float64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "atemp",
+      "tipo_pandas": "float64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "hum",
+      "tipo_pandas": "float64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "windspeed",
+      "tipo_pandas": "float64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "casual",
+      "tipo_pandas": "int64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "registered",
+      "tipo_pandas": "int64",
+      "valores_nulos": 0
+    },
+    {
+      "nombre": "cnt",
+      "tipo_pandas": "int64",
+      "valores_nulos": 0
+    }
+  ],
+  "cobertura": {
+    "fecha_inicial": "2011-01-01",
+    "fecha_final": "2012-12-31",
+    "fechas_distintas": 731,
+    "fechas_no_interpretables": 0,
+    "dias_del_periodo": 731,
+    "horas_calendario": 17544,
+    "horas_observadas_distintas": 17379,
+    "horas_sin_registro": 165,
+    "duplicados_fecha_hora": 0,
+    "filas_con_cnt_distinto_de_casual_mas_registered": 0
+  },
+  "registros_por_anio": {
+    "2011": 8645,
+    "2012": 8734
+  },
+  "registros_por_workingday": {
+    "0": 5514,
+    "1": 11865
+  },
+  "archivos_datos_en_hugging_face": [
+    {
+      "ruta": "hour.csv",
+      "bytes": 1156736
+    }
+  ],
+  "memoria_dataframe_bytes": 2537466,
+  "sha256_dataframe_y_esquema": "214519a79b5e490837238dca4650c655bf098f74fb63aa130a231e06ac5f5504",
+  "sha256_resumen_utf8": "00a80a1e17a3af6dd578f448268959969f3ef505e83a6f409a4f6403a56da091",
+  "python": "3.12.14",
+  "versiones": {
+    "datasets": "5.1.0",
+    "pandas": "3.1.0",
+    "pyarrow": "26.0.0",
+    "huggingface-hub": "2.2.0",
+    "ipykernel": "7.4.0",
+    "ipywidgets": "8.1.9",
+    "nbclient": "0.11.0",
+    "nbformat": "5.11.1",
+    "jupyterlab": "4.6.4"
+  }
+}

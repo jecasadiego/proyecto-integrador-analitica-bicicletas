@@ -1,0 +1,10 @@
+.venv/
+.work/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.env
+.env.*
+!.env.example
+.cache/
+entregables_AE2.zip
