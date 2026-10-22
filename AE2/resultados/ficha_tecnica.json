@@ -123,7 +123,7 @@
   ],
   "memoria_dataframe_bytes": 2537466,
   "sha256_dataframe_y_esquema": "214519a79b5e490837238dca4650c655bf098f74fb63aa130a231e06ac5f5504",
-  "sha256_resumen_utf8": "00a80a1e17a3af6dd578f448268959969f3ef505e83a6f409a4f6403a56da091",
+  "sha256_resumen_utf8": "7fa65c264434171089cf3f2a75a43eac6416e1704aa79810193d0ab6d642f53d",
   "python": "3.12.14",
   "versiones": {
     "datasets": "5.1.0",

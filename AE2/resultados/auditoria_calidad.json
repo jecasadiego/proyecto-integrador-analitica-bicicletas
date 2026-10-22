@@ -1,0 +1,140 @@
+{
+  "fecha_auditoria": "2026-10-22T17:53:37-05:00",
+  "zona_horaria": "America/Bogota",
+  "metodo": "Descarga nueva en memoria mediante urllib; no guarda CSV ni ZIP.",
+  "dataset_id": "t22000t/bike-sharing-tabular",
+  "revision_hugging_face": "6b645e0cedbc5208fcca11ac94544b088478bf61",
+  "configuracion": "default",
+  "split": "train",
+  "muestra": false,
+  "fuentes": {
+    "hugging_face": {
+      "url": "https://huggingface.co/datasets/t22000t/bike-sharing-tabular/resolve/6b645e0cedbc5208fcca11ac94544b088478bf61/hour.csv",
+      "archivo": "hour.csv",
+      "bytes": 1156736,
+      "sha256_csv": "e03de4ee4ef4dc376ac6e04bf829673c6269e8eba5c60fa121640fa2f829504f"
+    },
+    "uci": {
+      "url": "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip",
+      "archivo_dentro_del_zip": "hour.csv",
+      "bytes_csv": 1156736,
+      "sha256_csv": "e03de4ee4ef4dc376ac6e04bf829673c6269e8eba5c60fa121640fa2f829504f",
+      "bytes_zip": 279992,
+      "sha256_zip": "b70182d0d0508e9abbb79306ce5c0cec34869000f8220175ac83d11dbe845401",
+      "diccionario_consultado": "Readme.txt del mismo ZIP",
+      "sha256_readme": "b92c8628622948bf0828c43a1b315d1517c3d7fd63654730d0dea379b8e88175"
+    }
+  },
+  "identidad": {
+    "csv_identicos_byte_a_byte": true,
+    "dataframes_identicos": true,
+    "sha256_dataframe_y_esquema": "214519a79b5e490837238dca4650c655bf098f74fb63aa130a231e06ac5f5504",
+    "coincide_con_huella_del_notebook": true,
+    "ficha_contrastada": "AE2/resultados/ficha_tecnica.json",
+    "version_pandas": "3.1.0"
+  },
+  "filas": 17379,
+  "columnas": 17,
+  "nulos_por_variable": {
+    "instant": 0,
+    "dteday": 0,
+    "season": 0,
+    "yr": 0,
+    "mnth": 0,
+    "hr": 0,
+    "holiday": 0,
+    "weekday": 0,
+    "workingday": 0,
+    "weathersit": 0,
+    "temp": 0,
+    "atemp": 0,
+    "hum": 0,
+    "windspeed": 0,
+    "casual": 0,
+    "registered": 0,
+    "cnt": 0
+  },
+  "ceros_por_variable_numerica": {
+    "instant": 0,
+    "season": 0,
+    "yr": 8645,
+    "mnth": 0,
+    "hr": 726,
+    "holiday": 16879,
+    "weekday": 2502,
+    "workingday": 5514,
+    "weathersit": 0,
+    "temp": 0,
+    "atemp": 2,
+    "hum": 22,
+    "windspeed": 2180,
+    "casual": 1581,
+    "registered": 24,
+    "cnt": 0
+  },
+  "estadisticas_conteos": {
+    "cnt": {
+      "minimo": 1,
+      "maximo": 977,
+      "promedio": 189.46308763450142,
+      "mediana": 142.0,
+      "suma": 3292679
+    },
+    "casual": {
+      "minimo": 0,
+      "maximo": 367,
+      "promedio": 35.67621842453536,
+      "mediana": 17.0,
+      "suma": 620017
+    },
+    "registered": {
+      "minimo": 0,
+      "maximo": 886,
+      "promedio": 153.78686920996606,
+      "mediana": 115.0,
+      "suma": 2672662
+    }
+  },
+  "coherencia": {
+    "fechas_no_interpretables": 0,
+    "duplicados_fecha_hora": 0,
+    "filas_con_cnt_distinto_de_casual_mas_registered": 0,
+    "filas_con_anio_inconsistente": 0,
+    "filas_con_mes_inconsistente": 0,
+    "filas_con_dia_semana_inconsistente": 0,
+    "filas_con_workingday_inconsistente": 0,
+    "filas_con_conteos_negativos": 0
+  },
+  "cobertura": {
+    "fecha_inicial": "2011-01-01",
+    "fecha_final": "2012-12-31",
+    "horas_calendario": 17544,
+    "horas_observadas_distintas": 17379,
+    "horas_sin_registro": 165,
+    "horas_sin_registro_por_anio": {
+      "2011": 115,
+      "2012": 50
+    },
+    "tratamiento": "No se agregan filas ni se rellenan horas ausentes con cero."
+  },
+  "humedad_cero_por_fecha": {
+    "2011-03-10": 22
+  },
+  "interpretacion_de_ceros": {
+    "valores_nulos_y_controles": "Cero significa ausencia de incidencias en la comprobación, no cero alquileres.",
+    "yr": "0 representa 2011, según el diccionario original.",
+    "hr": "0 representa la hora 00, según el intervalo 0–23 documentado.",
+    "holiday": "0 identifica un día no festivo.",
+    "weekday": "0 corresponde a domingo; comprobado contra dteday en todas las filas. El README original no enumera los códigos.",
+    "workingday": "0 corresponde a fin de semana o festivo, según el diccionario original.",
+    "casual_y_registered": "Un grupo puede tener cero alquileres aunque el total cnt sea positivo.",
+    "meteorologia": "atemp, hum y windspeed contienen ceros en la fuente original. El README no explica su causa ni los identifica como códigos de ausencia."
+  },
+  "alcance_y_limitaciones": [
+    "La identidad de los archivos verifica la fidelidad de la copia y de la carga, no la exactitud de cada medición original.",
+    "Los 22 registros con humedad cero se concentran el 2011-03-10. Deben verificarse antes de usar humedad en un análisis meteorológico; no se imputan ni eliminan automáticamente.",
+    "No se atribuyen los ceros meteorológicos a calma, sensores defectuosos o datos faltantes sin evidencia adicional.",
+    "Cero valores nulos no significa cobertura completa: existen horas de calendario sin registro.",
+    "La necesidad del proyecto utiliza hr, workingday y cnt; esta auditoría no añade un análisis causal o predictivo."
+  ]
+}

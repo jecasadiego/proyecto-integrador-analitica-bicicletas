@@ -52,15 +52,18 @@ El periodo contiene 731 fechas, pero se observan 17.379 de las 17.544 combinacio
     │   └── 01_reconocimiento_dataset.ipynb
     ├── resultados/
     │   ├── resumen_dataframe.txt
-    │   └── ficha_tecnica.json
+    │   ├── ficha_tecnica.json
+    │   └── auditoria_calidad.json
     └── src/
-        └── ejecutar_notebook.py
+        ├── ejecutar_notebook.py
+        └── auditar_dataset.py
 ```
 
 - El documento desarrolla la necesidad, justificación, objetivos, conceptos, metodología, diccionario inicial, alcance y diseño del proyecto.
 - El notebook muestra registros, dimensiones, columnas, tipos y nulos; explica la unidad de análisis y las variables que sustentan la pregunta.
 - El notebook crea la carpeta de resultados cuando hace falta y **regenera** `resumen_dataframe.txt` en UTF-8 con la identificación del dataset, revisión, split, alcance, dimensiones, tipos y nulos. También lee el archivo para verificar su contenido.
 - `ficha_tecnica.json` conserva metadatos verificables del DataFrame y de la descarga para comprobar la correspondencia entre entregables.
+- `auditar_dataset.py` contrasta nuevas descargas de Hugging Face y UCI, verifica la huella del DataFrame del notebook y genera `auditoria_calidad.json` con los controles de calidad y la interpretación de los ceros.
 - `fuentes_y_atribucion.md` identifica las fuentes consultadas y las condiciones del dataset.
 
 No se incluye una copia del dataset en GitHub. Al ejecutar, la biblioteca `datasets` descarga los datos públicos y utiliza su caché local de Hugging Face, fuera del historial del repositorio. La primera ejecución necesita conexión a Internet. El archivo original ocupa aproximadamente 1,16 MB; el entorno de Python y sus dependencias requieren espacio adicional.
@@ -95,6 +98,24 @@ python3.12 -m venv .venv
 El script ejecuta el notebook con el Python del entorno utilizado y guarda sus resultados visibles. El notebook descarga la revisión fijada, construye el DataFrame y actualiza los dos archivos de `AE2/resultados/`. No se necesita registrar un kernel de forma global.
 
 El repositorio fija finales de línea LF mediante `.gitattributes` para conservar los bytes UTF-8 del resumen y su verificación SHA-256 al clonar en diferentes sistemas.
+
+Para repetir la auditoría adicional contra la fuente original, después de ejecutar el notebook:
+
+```console
+# Windows
+.venv\Scripts\python.exe AE2/src/auditar_dataset.py
+
+# macOS o Linux
+.venv/bin/python AE2/src/auditar_dataset.py
+```
+
+La auditoría necesita Internet y lee el CSV de Hugging Face y el ZIP oficial de UCI en memoria, sin incorporarlos al repositorio. La igualdad entre fuentes verifica la fidelidad de la copia, no garantiza que cada medición original sea correcta.
+
+### Por qué aparecen ceros
+
+El notebook distingue los nulos de los valores numéricos iguales a cero y muestra ejemplos de ambos años y tipos de día. En la tabla `valores_nulos`, **0 significa que no se encontraron celdas vacías**. En los controles de duplicados o discrepancias, 0 significa que no se encontraron esos problemas. En las variables, `yr = 0` representa 2011 y `workingday = 0` identifica un fin de semana o festivo; son códigos válidos.
+
+La nueva revisión confirmó que `cnt` contiene valores entre 1 y 977, con un total observado de 3.292.679 alquileres. El archivo no es una tabla de ceros. Sí se documentan 22 valores de humedad iguales a cero concentrados en el 10 de marzo de 2011. La fuente no explica su causa: deben verificarse antes de un análisis meteorológico. Se conservan sin imputarlos ni eliminarlos y no intervienen en la pregunta principal, que usa `hr`, `workingday` y `cnt`.
 
 Para abrirlo de manera interactiva:
 

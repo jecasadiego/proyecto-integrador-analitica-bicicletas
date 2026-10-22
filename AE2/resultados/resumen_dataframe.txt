@@ -10,6 +10,7 @@ Filas: 17379
 Columnas: 17
 
 NOMBRES, TIPOS DE DATOS Y VALORES NULOS
+Nota: valores_nulos cuenta celdas vacías; 0 significa que no se encontraron nulos, no que todos los datos valgan cero.
 variable | tipo_pandas | valores_nulos
 instant | int64 | 0
 dteday | str | 0
