@@ -134,15 +134,3 @@ En Jupyter, selecciona el kernel del entorno y ejecuta todas las celdas en orden
 Fanaee-T, H. (2013). *Bike Sharing* [Dataset]. UCI Machine Learning Repository. [https://doi.org/10.24432/C5W894](https://doi.org/10.24432/C5W894). Copia utilizada: `t22000t/bike-sharing-tabular`, alojada en Hugging Face. La licencia CC BY 4.0 permite compartir y adaptar los datos con atribución, enlace a la licencia e indicación de modificaciones. Este proyecto conserva los registros del CSV sin muestreo; genera resúmenes y documentación.
 
 La procedencia y la verificación de la copia se describen en [fuentes y atribución](AE2/documento/fuentes_y_atribucion.md). Referencias técnicas: [carga desde Hugging Face](https://huggingface.co/docs/datasets/loading), [conversión a Pandas](https://huggingface.co/docs/datasets/use_with_pandas) y [medidas de posición — NIST](https://www.itl.nist.gov/div898/handbook/eda/section3/eda351.htm).
-
-### Revisión y entrega en la plataforma
-
-La portada identifica a Juan Esteban Casadiego Benavides y Evelyn Cerro, grupo 17, asignatura Proyecto Integrador Diseño y Documentación, docente Andrés Felipe Callejas Jaramillo e Institución Universitaria Digital de Antioquia. El documento utiliza un formato académico editable. No se suministró la plantilla institucional; su conformidad requiere contrastarlo con ella antes de presentar el trabajo.
-
-1. Abre el Word, confirma sus datos académicos y revisa los apartados desarrollados.
-2. Confirma que el notebook tenga resultados visibles y que el `.txt` coincida con el DataFrame.
-3. Adjunta `AE2/documento/proyecto_inicial_AE2.docx` en la actividad.
-4. Comparte el enlace de este repositorio y comprueba que el docente pueda abrirlo.
-5. Confirma el envío en la plataforma según las condiciones publicadas por el curso.
-
-La publicación del repositorio no sustituye el envío de la actividad en la plataforma.
