@@ -65,19 +65,18 @@ dataframe.info
 <class 'pandas.DataFrame'>
 RangeIndex: 17379 entries, 0 to 17378
 Data columns (total 11 columns):
- #   Column                  Non-Null Count  Dtype         
----  ------                  --------------  -----         
+ #   Column                  Non-Null Count  Dtype
+---  ------                  --------------  -----
  0   fecha                   17379 non-null  datetime64[us]
- 1   hora                    17379 non-null  int64         
- 2   es_laborable            17379 non-null  bool          
- 3   alquileres_total        17379 non-null  int64         
- 4   alquileres_ocasionales  17379 non-null  int64         
- 5   alquileres_registrados  17379 non-null  int64         
+ 1   hora                    17379 non-null  int64
+ 2   es_laborable            17379 non-null  bool
+ 3   alquileres_total        17379 non-null  int64
+ 4   alquileres_ocasionales  17379 non-null  int64
+ 5   alquileres_registrados  17379 non-null  int64
  6   fecha_hora              17379 non-null  datetime64[us]
- 7   anio                    17379 non-null  int64         
- 8   tipo_dia                17379 non-null  category      
- 9   orden_franja            17379 non-null  int64         
- 10  franja_horaria          17379 non-null  category      
+ 7   anio                    17379 non-null  int64
+ 8   tipo_dia                17379 non-null  category
+ 9   orden_franja            17379 non-null  int64
+ 10  franja_horaria          17379 non-null  category
 dtypes: bool(1), category(2), datetime64[us](2), int64(6)
 memory usage: 1.1 MB
-

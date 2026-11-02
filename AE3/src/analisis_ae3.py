@@ -203,7 +203,7 @@ def resumen_final(df, originales, tablas, controles):
     buffer = StringIO()
     df.info(buf=buffer, show_counts=True)
     lineas.append(buffer.getvalue())
-    return "\n".join(lineas) + "\n"
+    return "\n".join(line.rstrip() for line in "\n".join(lineas).splitlines()).rstrip() + "\n"
 
 
 def exportar_y_verificar(raiz, original, preparado, tablas, controles, respuestas):
