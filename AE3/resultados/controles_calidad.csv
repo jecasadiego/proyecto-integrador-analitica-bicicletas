@@ -1,0 +1,13 @@
+control,incidencias,tratamiento
+Celdas nulas en las 17 columnas,0,Conservar; no se detectan incidencias
+Fechas no interpretables,0,Conservar; no se detectan incidencias
+Filas completas duplicadas,0,Conservar; no se detectan incidencias
+Duplicados fecha y hora,0,Conservar; no se detectan incidencias
+Horas fuera de 0 a 23,0,Conservar; no se detectan incidencias
+Códigos workingday fuera de 0 y 1,0,Conservar; no se detectan incidencias
+Conteos negativos,0,Conservar; no se detectan incidencias
+Discrepancias cnt y componentes,0,Conservar; no se detectan incidencias
+Año codificado distinto de la fecha,0,Conservar; no se detectan incidencias
+Mes codificado distinto de la fecha,0,Conservar; no se detectan incidencias
+Día de semana distinto de la fecha,0,Conservar; no se detectan incidencias
+Tipo de día inconsistente con fecha y holiday,0,Conservar; no se detectan incidencias

@@ -1,0 +1,100 @@
+{
+  "dataset_id": "t22000t/bike-sharing-tabular",
+  "revision": "6b645e0cedbc5208fcca11ac94544b088478bf61",
+  "configuracion": "default",
+  "split": "train",
+  "fecha_desarrollo": "2026-11-02",
+  "filas_originales": 17379,
+  "columnas_originales": 17,
+  "filas_preparadas": 17379,
+  "columnas_preparadas": 11,
+  "filas_eliminadas": 0,
+  "nulos_originales": 0,
+  "nulos_preparados": 0,
+  "alquileres_total": 3292679,
+  "huella_original": "214519a79b5e490837238dca4650c655bf098f74fb63aa130a231e06ac5f5504",
+  "huella_preparado": "d1acdd0e983b81de3944aa36bfd74b2cb3ca110fd36a5d16e92f9978a3a6c7de",
+  "horas_sin_registro": 165,
+  "verificaciones": {
+    "original_sin_modificar": true,
+    "csv_releidos_comparados_celda_a_celda": true,
+    "totales_conservados_en_tres_tablas": true,
+    "porcentajes_p2_suman_100_por_tipo": true,
+    "resumen_releido_coincide": true
+  },
+  "porcentajes_p2_por_tipo": {
+    "Laborable": 100.0,
+    "No laborable": 100.00000000000001
+  },
+  "respuestas": {
+    "P1": "Laborable: el mayor promedio corresponde a las 17:00, con 525.29 alquileres por hora registrada, mediana 539.0 y 499 observaciones (cobertura 99.80 %). No laborable: el mayor promedio corresponde a las 13:00, con 372.73 alquileres por hora registrada, mediana 367.0 y 231 observaciones (cobertura 100.00 %). Son franjas para revisar en el escenario operativo, sin inferir faltantes de bicicletas ni causalidad. Las medias describen horas observadas y no se ajustan por clima o año.",
+    "P2": "Laborable: la franja 12 a 17 reúne 798,696 alquileres, 34.84 % del total de ese tipo de día y un promedio de 267.21 por hora registrada. No laborable: la franja 12 a 17 reúne 494,046 alquileres, 49.39 % del total de ese tipo de día y un promedio de 356.45 por hora registrada. La participación usa como denominador los alquileres del mismo tipo de día, no los de todo el dataset. Las franjas tienen seis horas nominales; se informa cobertura para reconocer ausencias.",
+    "P3": "2011, Laborable: máximo a las 17:00 (394.92 alquileres por hora registrada). 2011, No laborable: máximo a las 13:00 (285.80 alquileres por hora registrada). 2012, Laborable: máximo a las 17:00 (656.19 alquileres por hora registrada). 2012, No laborable: máximo a las 13:00 (458.91 alquileres por hora registrada). Laborable: el conjunto de horas máximas coincide entre ambos años. No laborable: el conjunto de horas máximas coincide entre ambos años. El máximo se selecciona por la media; la tabla conserva todas las horas y los empates. Esta comparación histórica no demuestra una tendencia futura ni explica sus causas."
+  },
+  "archivos": [
+    {
+      "ruta": "AE3/datos/dataset_preparado.csv",
+      "filas": 17379,
+      "columnas": 11,
+      "sha256": "97b9576c55b5e3e8a4aac7fe083bb6a65248654614b881d81512eff5ae3e18e8"
+    },
+    {
+      "ruta": "AE3/resultados/p1_perfil_horario.csv",
+      "filas": 48,
+      "columnas": 9,
+      "sha256": "be2d0039dc4446a16cf5eba74c0dee3694d285085a1889a1acf0368726e2639e"
+    },
+    {
+      "ruta": "AE3/resultados/p2_franjas.csv",
+      "filas": 8,
+      "columnas": 11,
+      "sha256": "ce7c67968bc9106aa07c71369bb8fcd13158739759db63d2728a82c4814df71e"
+    },
+    {
+      "ruta": "AE3/resultados/p3_perfil_anual.csv",
+      "filas": 96,
+      "columnas": 11,
+      "sha256": "4456958ad22af9fd4aea92eaecef972283e18bf4b0f331411cc5176d970bb72d"
+    },
+    {
+      "ruta": "AE3/resultados/controles_calidad.csv",
+      "filas": 12,
+      "columnas": 3,
+      "sha256": "ada0ed1972e4c06191280f5da9d833be63999dfa3541c3ce6030534828248509"
+    },
+    {
+      "ruta": "AE3/resultados/comparacion_antes_despues.csv",
+      "filas": 2,
+      "columnas": 5,
+      "sha256": "5fd280f0525cdf3394810684de57c652e8309a2192be7c5ad741852cf7519865"
+    },
+    {
+      "ruta": "AE3/resultados/tipos_y_nulos_antes_despues.csv",
+      "filas": 28,
+      "columnas": 4,
+      "sha256": "198808716264d3ee1f68146762f85c8b6655ebc08fbed82489cd0453b187b518"
+    },
+    {
+      "ruta": "AE3/resultados/bitacora_transformaciones.csv",
+      "filas": 8,
+      "columnas": 3,
+      "sha256": "3230ed841a5e4920f857f62b2e429d5766b7b56fabaf6e4c7b6de36db8ed03c2"
+    },
+    {
+      "ruta": "AE3/resultados/diccionario_variables.csv",
+      "filas": 11,
+      "columnas": 5,
+      "sha256": "9abdaed7a56f1fc6031f5789c2388cef92e1697cad5485045debb91346a69c71"
+    },
+    {
+      "ruta": "AE3/resultados/cobertura_por_anio_tipo.csv",
+      "filas": 4,
+      "columnas": 6,
+      "sha256": "fd0cec5495c20f84485afd798175af84defc83e61fc9162e322b69e0cb38c381"
+    },
+    {
+      "ruta": "AE3/resultados/resumen_dataframe_transformado.txt",
+      "sha256": "1b0026928f603f571c51d5461a32e6218ee10f90a892a755be86c6b5b60134d4"
+    }
+  ]
+}

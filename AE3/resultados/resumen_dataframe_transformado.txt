@@ -1,0 +1,83 @@
+AE3 RESUMEN DEL DATAFRAME TRANSFORMADO Y ENRIQUECIDO
+Dataset: t22000t/bike-sharing-tabular
+Revision: 6b645e0cedbc5208fcca11ac94544b088478bf61
+Configuracion: default; split: train
+Muestra: no. Se conservan todas las filas; se seleccionan variables pertinentes.
+Original: 17379 filas y 17 columnas
+Filas: 17379
+Columnas: 11
+
+COLUMNAS TIPOS Y NULOS
+Nota: nulos=0 significa ausencia de celdas vacias, no que todos los valores sean cero.
+variable | tipo_pandas | nulos
+fecha | datetime64[us] | 0
+hora | int64 | 0
+es_laborable | bool | 0
+alquileres_total | int64 | 0
+alquileres_ocasionales | int64 | 0
+alquileres_registrados | int64 | 0
+fecha_hora | datetime64[us] | 0
+anio | int64 | 0
+tipo_dia | category | 0
+orden_franja | int64 | 0
+franja_horaria | category | 0
+
+ESTADISTICAS NUMERICAS
+Incluye codigos de hora, anio y orden_franja solo como rangos; no representan cantidades de negocio.
+              hora  alquileres_total  alquileres_ocasionales  alquileres_registrados         anio  orden_franja
+count 17379.000000      17379.000000            17379.000000            17379.000000 17379.000000  17379.000000
+mean     11.546752        189.463088               35.676218              153.786869  2011.502561      1.508372
+std       6.914405        181.387599               49.305030              151.357286     0.500008      1.115691
+min       0.000000          1.000000                0.000000                0.000000  2011.000000      0.000000
+25%       6.000000         40.000000                4.000000               34.000000  2011.000000      1.000000
+50%      12.000000        142.000000               17.000000              115.000000  2012.000000      2.000000
+75%      18.000000        281.000000               48.000000              220.000000  2012.000000      3.000000
+max      23.000000        977.000000              367.000000              886.000000  2012.000000      3.000000
+
+CATEGORIAS
+tipo_dia:
+tipo_dia
+Laborable       11865
+No laborable     5514
+franja_horaria:
+franja_horaria
+00 a 05    4276
+06 a 11    4360
+12 a 17    4375
+18 a 23    4368
+
+Fecha inicial: 2011-01-01
+Fecha final: 2012-12-31
+Fechas distintas: 731
+Total alquileres: 3292679
+Total ocasionales: 620017
+Total registrados: 2672662
+Horas sin registro en cuadricula nominal: 165
+No se imputan horas ausentes como cero. No se asigna zona horaria no documentada.
+
+TABLAS DE RESPUESTA
+p1_perfil_horario: 48 filas; total alquileres = 3292679
+p2_franjas: 8 filas; total alquileres = 3292679
+p3_perfil_anual: 96 filas; total alquileres = 3292679
+Participacion P2: suma 100 % dentro de cada tipo de dia antes del redondeo de presentacion.
+
+dataframe.info
+<class 'pandas.DataFrame'>
+RangeIndex: 17379 entries, 0 to 17378
+Data columns (total 11 columns):
+ #   Column                  Non-Null Count  Dtype         
+---  ------                  --------------  -----         
+ 0   fecha                   17379 non-null  datetime64[us]
+ 1   hora                    17379 non-null  int64         
+ 2   es_laborable            17379 non-null  bool          
+ 3   alquileres_total        17379 non-null  int64         
+ 4   alquileres_ocasionales  17379 non-null  int64         
+ 5   alquileres_registrados  17379 non-null  int64         
+ 6   fecha_hora              17379 non-null  datetime64[us]
+ 7   anio                    17379 non-null  int64         
+ 8   tipo_dia                17379 non-null  category      
+ 9   orden_franja            17379 non-null  int64         
+ 10  franja_horaria          17379 non-null  category      
+dtypes: bool(1), category(2), datetime64[us](2), int64(6)
+memory usage: 1.1 MB
+

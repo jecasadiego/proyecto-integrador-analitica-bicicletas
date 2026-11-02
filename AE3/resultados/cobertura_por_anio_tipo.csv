@@ -1,0 +1,5 @@
+anio,tipo_dia,horas_esperadas,horas_observadas,horas_sin_registro,cobertura_pct
+2011,Laborable,6000,5911,89,98.51666666666667
+2011,No laborable,2760,2734,26,99.05797101449275
+2012,Laborable,6000,5954,46,99.23333333333333
+2012,No laborable,2784,2780,4,99.85632183908046

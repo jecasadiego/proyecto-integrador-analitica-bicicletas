@@ -1,0 +1,9 @@
+operacion,registros_afectados_o_incidencias,regla_y_justificacion
+Selección de seis variables fuente,17379,"Se excluyen 11 columnas del DataFrame de trabajo, no filas: instant, season, yr, mnth, holiday, weekday, weathersit, temp, atemp, hum, windspeed. yr y mnth se usan antes como controles. El original completo se conserva en memoria."
+Nombres descriptivos en español,17379,Se renombran seis columnas sin alterar sus valores.
+Fecha de texto a datetime64,17379,dteday con formato %Y-%m-%d; errores=raise. No se inventa zona horaria.
+Indicador laborable de entero a bool,17379,0 a False y 1 a True tras comprobar el dominio.
+Cinco variables derivadas,17379,"fecha_hora, anio, tipo_dia, orden_franja y franja_horaria; todas con regla explícita."
+"Nulos, duplicados e inconsistencias",0,"No se eliminan registros, no se imputan ni reemplazan valores. Los ceros de controles son ausencia de incidencias."
+Horas sin fila en calendario,165,"Se contabilizan como ausencias, no se agregan al dataset y no equivalen a cero alquileres. Cuadrícula nominal de 24 horas; sin zona ni ajuste de horario de verano no documentados."
+Humedad igual a cero en el original,22,Se conserva el original. La humedad no se selecciona por no aportar a las preguntas y por requerir verificación; también se excluyen las demás variables meteorológicas.

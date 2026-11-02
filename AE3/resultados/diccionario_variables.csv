@@ -1,0 +1,12 @@
+variable,significado_o_regla,tipo_pandas,unidad_o_codigos,utilidad
+fecha,Fecha del registro; dteday interpretado con formato AAAA-MM-DD.,datetime64[us],Fecha,P1 P2 P3 y cobertura
+hora,"Hora original hr, entero entre 0 y 23.",int64,Hora del día,P1 P3
+es_laborable,workingday convertido a booleano; True si no es fin de semana ni festivo.,bool,True o False,P1 P2 P3
+alquileres_total,Conteo original cnt en una hora del sistema.,int64,Alquileres por registro horario,P1 P2 P3
+alquileres_ocasionales,Conteo original casual; no representa personas únicas.,int64,Alquileres por registro horario,Comprobar el total
+alquileres_registrados,Conteo original registered; no representa personas únicas.,int64,Alquileres por registro horario,Comprobar el total
+fecha_hora,fecha + hora expresada en horas; sin asignar zona horaria no documentada.,datetime64[us],Fecha y hora sin zona,Clave única y cobertura
+anio,Año calendario extraído de fecha; se contrasta con yr + 2011.,int64,Año,P3
+tipo_dia,Etiqueta de es_laborable: Laborable o No laborable.,category,Categoría,P1 P2 P3 y leyendas AE4
+orden_franja,División entera hora // 6; códigos de 0 a 3.,int64,Código ordinal,Orden de P2 y eje AE4
+franja_horaria,"Etiqueta de orden_franja: 00 a 05, 06 a 11, 12 a 17, 18 a 23.",category,Intervalo de seis horas,P2
