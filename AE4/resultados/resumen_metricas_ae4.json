@@ -1,0 +1,172 @@
+{
+  "etapa": "AE4",
+  "fecha_generacion": "2026-11-26",
+  "dataset_id": "t22000t/bike-sharing-tabular",
+  "revision": "6b645e0cedbc5208fcca11ac94544b088478bf61",
+  "indicadores_generales": {
+    "horas_observadas": 17379,
+    "horas_esperadas": 17544,
+    "horas_ausentes": 165,
+    "cobertura_total_pct": 99.0595075239398,
+    "fechas_distintas": 731,
+    "fecha_inicio": "2011-01-01",
+    "fecha_fin": "2012-12-31",
+    "alquileres_total": 3292679,
+    "alquileres_registrados": 2672662,
+    "alquileres_ocasionales": 620017,
+    "participacion_registrados_pct": 81.16983161735475,
+    "participacion_ocasionales_pct": 18.830168382645258,
+    "promedio_global_por_hora": 189.46308763450142,
+    "mediana_global_por_hora": 142.0,
+    "alquileres_laborable": 2292410,
+    "alquileres_no_laborable": 1000269,
+    "dias_laborables": 500,
+    "dias_no_laborables": 231,
+    "alquileres_2011": 1243103,
+    "alquileres_2012": 2049576,
+    "variacion_total_anual_pct": 64.87579870694545,
+    "pico_laborable_hora": 17,
+    "pico_laborable_promedio": 525.2905811623247,
+    "pico_laborable_mediana": 539.0,
+    "pico_laborable_observaciones": 499,
+    "pico_laborable_cobertura_pct": 99.8,
+    "pico_manana_laborable_hora": 8,
+    "pico_manana_laborable_promedio": 477.00604838709677,
+    "pico_manana_laborable_mediana": 463.0,
+    "pico_no_laborable_hora": 13,
+    "pico_no_laborable_promedio": 372.73160173160176,
+    "pico_no_laborable_mediana": 367.0,
+    "pico_no_laborable_observaciones": 231,
+    "pico_no_laborable_cobertura_pct": 100.0,
+    "franja_lider_laborable": "12 a 17",
+    "franja_lider_laborable_pct": 34.84088797379177,
+    "franja_lider_laborable_total": 798696,
+    "franja_lider_laborable_promedio": 267.2117765138842,
+    "franja_lider_no_laborable": "12 a 17",
+    "franja_lider_no_laborable_pct": 49.39131373660485,
+    "franja_lider_no_laborable_total": 494046,
+    "franja_lider_no_laborable_promedio": 356.45454545454544,
+    "picos_anuales_coinciden": true
+  },
+  "brechas_extremas_p1": {
+    "mayor_ventaja_laborable": {
+      "hora": 8,
+      "brecha_promedio": 371.3523687334171,
+      "promedio_laborable": 477.00604838709677,
+      "promedio_no_laborable": 105.65367965367966
+    },
+    "mayor_ventaja_no_laborable": {
+      "hora": 14,
+      "brecha_promedio": -181.07273248839513,
+      "promedio_laborable": 183.5722891566265,
+      "promedio_no_laborable": 364.64502164502164
+    }
+  },
+  "comparacion_interanual_p3": [
+    {
+      "tipo_dia": "Laborable",
+      "hora_pico_2011": 17,
+      "hora_pico_2012": 17,
+      "coincide_hora_pico": true,
+      "promedio_pico_2011": 394.916,
+      "promedio_pico_2012": 656.1887550200803,
+      "cambio_pico_absoluto": 261.2727550200803,
+      "cambio_pico_pct": 66.15907054160385,
+      "mediana_pico_2011": 430.0,
+      "mediana_pico_2012": 704.0,
+      "total_anual_2011": 856264,
+      "total_anual_2012": 1436146,
+      "cambio_total_anual_pct": 67.72233797053245,
+      "media_global_2011": 144.85941465065133,
+      "media_global_2012": 241.20691971783674
+    },
+    {
+      "tipo_dia": "No laborable",
+      "hora_pico_2011": 13,
+      "hora_pico_2012": 13,
+      "coincide_hora_pico": true,
+      "promedio_pico_2011": 285.8,
+      "promedio_pico_2012": 458.91379310344826,
+      "cambio_pico_absoluto": 173.11379310344824,
+      "cambio_pico_pct": 60.57165608938006,
+      "mediana_pico_2011": 314.0,
+      "mediana_pico_2012": 492.5,
+      "total_anual_2011": 386839,
+      "total_anual_2012": 613430,
+      "cambio_total_anual_pct": 58.575014411680314,
+      "media_global_2011": 141.4919531821507,
+      "media_global_2012": 220.65827338129498
+    }
+  ],
+  "picos_anuales_p3": [
+    {
+      "anio": 2011,
+      "tipo_dia": "Laborable",
+      "hora": 17,
+      "horas_observadas": 250,
+      "promedio_alquileres_por_hora": 394.916,
+      "mediana_alquileres_por_hora": 430.0,
+      "cobertura_pct": 100.0
+    },
+    {
+      "anio": 2012,
+      "tipo_dia": "Laborable",
+      "hora": 17,
+      "horas_observadas": 249,
+      "promedio_alquileres_por_hora": 656.1887550200803,
+      "mediana_alquileres_por_hora": 704.0,
+      "cobertura_pct": 99.6
+    },
+    {
+      "anio": 2011,
+      "tipo_dia": "No laborable",
+      "hora": 13,
+      "horas_observadas": 115,
+      "promedio_alquileres_por_hora": 285.8,
+      "mediana_alquileres_por_hora": 314.0,
+      "cobertura_pct": 100.0
+    },
+    {
+      "anio": 2012,
+      "tipo_dia": "No laborable",
+      "hora": 13,
+      "horas_observadas": 116,
+      "promedio_alquileres_por_hora": 458.91379310344826,
+      "mediana_alquileres_por_hora": 492.5,
+      "cobertura_pct": 100.0
+    }
+  ],
+  "comprobaciones_coherencia": [
+    {
+      "control": "Dimensiones del dataset preparado",
+      "estado": true,
+      "detalle": "17.379 filas × 11 columnas; 0 celdas nulas."
+    },
+    {
+      "control": "Conservación del total de alquileres",
+      "estado": true,
+      "detalle": "3.292.679 alquileres idénticos en dataset base, P1, P2, P3 y validaciones.json."
+    },
+    {
+      "control": "Consistencia de cobertura y ausencias",
+      "estado": true,
+      "detalle": "165 horas sin registro en la cuadrícula nominal de 17.544 horas (cobertura 99,06 %)."
+    },
+    {
+      "control": "Recálculo independiente de P1 (hora × tipo de día)",
+      "estado": true,
+      "detalle": "48 grupos verificados (error máximo < 1e-9)."
+    },
+    {
+      "control": "Recálculo independiente de P2 (franjas de seis horas)",
+      "estado": true,
+      "detalle": "8 grupos verificados (error máximo < 1e-9)."
+    },
+    {
+      "control": "Recálculo independiente de P3 (año × hora × tipo)",
+      "estado": true,
+      "detalle": "96 grupos verificados (error máximo < 1e-9)."
+    }
+  ],
+  "todas_las_comprobaciones_ok": true
+}
