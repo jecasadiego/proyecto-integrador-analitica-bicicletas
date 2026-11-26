@@ -1,18 +1,103 @@
-# Proyecto integrador — AE2 y AE3
+# Proyecto integrador — AE2, AE3 y AE4
 
 ## Patrones horarios de alquiler de bicicletas según tipo de día
 
-Este proyecto formula y responde una necesidad de analítica descriptiva a partir de un dataset de Hugging Face. AE2 conserva la ideación y el reconocimiento original. AE3 transforma y enriquece esos datos, responde tres preguntas con tablas y deja archivos preparados para su representación gráfica en AE4. Cada etapa incluye su Word y su notebook ejecutado.
+Este proyecto formula, prepara y presenta una solución completa de analítica descriptiva a partir de un dataset público de Hugging Face (`t22000t/bike-sharing-tabular`, copia verificada de Capital Bikeshare 2011–2012 en UCI). **AE2** conserva la ideación y el reconocimiento original. **AE3** transforma y enriquece los datos y responde las tres preguntas de negocio con tablas verificadas. **AE4** formaliza las métricas y gráficos, despliega la aplicación interactiva en **Streamlit** y consolida el **informe final completo en PDF**.
 
-**Repositorio:** [jecasadiego/proyecto-integrador-analitica-bicicletas](https://github.com/jecasadiego/proyecto-integrador-analitica-bicicletas).
+- **Repositorio GitHub:** [jecasadiego/proyecto-integrador-analitica-bicicletas](https://github.com/jecasadiego/proyecto-integrador-analitica-bicicletas)
+- **Informe completo en PDF (AE2–AE4):** [AE4/documento/informe_final_AE4.pdf](AE4/documento/informe_final_AE4.pdf)
+- **Aplicación interactiva en Streamlit (código principal):** [`AE4/app/aplicacion_streamlit.py`](AE4/app/aplicacion_streamlit.py)
+- **Enlace de despliegue en Streamlit Community Cloud:** *Vinculado a este repositorio con archivo principal `AE4/app/aplicacion_streamlit.py` (actualiza aquí la URL pública `https://<tu-app>.streamlit.app` una vez activado el despliegue en Streamlit Cloud).*
+- **Integrantes (Grupo 17):** Juan Esteban Casadiego Benavides y Evelyn Cerro · **Docente:** Andrés Felipe Callejas Jaramillo · **Institución:** Institución Universitaria Digital de Antioquia.
 
 ### Necesidad y escenario de uso
 
 El beneficiario propuesto es una coordinación operativa de un sistema de bicicletas compartidas. En un **escenario hipotético de aprendizaje**, necesita conocer cómo se distribuyen los alquileres registrados a lo largo del día y cómo cambian entre días laborables y no laborables, como insumo para revisar horarios de atención y seguimiento operativo. No se ha comprobado un problema de disponibilidad, pérdidas o insatisfacción del servicio.
 
-**Pregunta de análisis:** ¿Cómo varía el número de alquileres de bicicletas por hora entre días laborables y no laborables en Capital Bikeshare durante 2011 y 2012?
+**Pregunta central de análisis:** ¿Cómo varía el número de alquileres registrados por hora entre días laborables y no laborables en Capital Bikeshare durante 2011 y 2012?
 
-Las variables centrales de origen son `hr` (hora), `workingday` (tipo de día) y `cnt` (alquileres registrados). AE2 diseña la comparación; AE3 la ejecuta mediante medias, medianas, cantidades de observaciones y cobertura. El periodo y la unidad de análisis permanecen iguales.
+Las variables centrales de origen son `hr` (hora), `workingday` (tipo de día) y `cnt` (alquileres registrados). AE2 diseña la comparación; AE3 la ejecuta mediante medias, medianas, cantidades de observaciones y cobertura; AE4 construye las métricas formales, visualizaciones interactivas, aplicación de Streamlit e informe final en PDF. El periodo y la unidad de análisis permanecen iguales.
+
+---
+
+## AE4 — Métricas, Visualizaciones, Streamlit e Informe Final
+
+### Preguntas de negocio, métricas y hallazgos verificados
+
+| Pregunta | Métricas principales (unidad) | Gráfico seleccionado | Respuesta principal verificada (2011–2012) |
+| --- | --- | --- | --- |
+| **P1** ¿Cómo varían el promedio y la mediana por hora entre tipos de día? | Promedio, mediana, brecha (`Lab − No lab`) en *alq./hora registrada* y cobertura (*%*) | Líneas comparativas de 24 horas (media y mediana) + barras divergentes de brecha y cobertura | **Laborable** bimodal: picos a las **08:00** (477,01; mediana 463,0) y **17:00** (**525,29**; mediana 539,0; cob. 99,80 %). **No laborable** unimodal: máximo a las **13:00** (**372,73**; mediana 367,0; cob. 100,00 %). |
+| **P2** ¿Qué franjas de seis horas concentran más alquileres dentro de cada tipo de día? | Participación (*%* sobre total de su tipo de día), volumen acumulado (*alquileres*) y media (*alq./h*) | Panel doble de barras agrupadas: participación (%) y volumen acumulado con promedio horario | La franja **12 a 17** lidera en ambos: **34,84 %** en laborables (798.696 alq.; 267,21 alq./h) y **49,39 %** en no laborables (494.046 alq.; **356,45** alq./h). Mayor volumen absoluto en laborables por tener 500 días vs. 231, pero mayor intensidad horaria en no laborables. |
+| **P3** ¿Se mantienen los horarios de mayor promedio al separar 2011 y 2012? | `rango_promedio` anual, promedio/mediana por año (*alq./h*) y variación interanual (*%*) | Panel dual 2011 vs. 2012 por tipo de día + comparación de picos y volumen total anual | **Sí se mantienen:** **17:00** (laborable) y **13:00** (no laborable) en ambos años. El nivel crece en 2012: 394,92 → 656,19 (+66,16 %) en laborables y 285,80 → 458,91 (+60,57 %) en no laborables (+64,88 % en el total anual). |
+
+**Limitaciones y distinción económica:** Los datos miden **alquileres registrados (volumen físico)** y no contienen tarifas, membresías, ingresos ni costos operativos; por tanto, no permiten inferir **ingresos** ni **rentabilidad**. Tampoco demuestran causalidad, demanda no atendida ni tendencia futura. Las **165 horas sin registro** (cobertura nominal 99,06 %) se informan explícitamente y nunca se imputan como cero.
+
+### Rutas de datos utilizadas por la aplicación Streamlit y AE4
+
+La aplicación carga directamente los archivos verificados de AE3 sin duplicar ni alterar las fuentes:
+
+- Dataset preparado (17.379 filas × 11 columnas): `AE3/datos/dataset_preparado.csv`
+- Tablas de respuesta verificadas: `AE3/resultados/p1_perfil_horario.csv`, `AE3/resultados/p2_franjas.csv`, `AE3/resultados/p3_perfil_anual.csv`
+- Tablas de soporte y auditoría: `AE3/resultados/cobertura_por_anio_tipo.csv`, `AE3/resultados/comparacion_antes_despues.csv`, `AE3/resultados/bitacora_transformaciones.csv`, `AE3/resultados/diccionario_variables.csv`, `AE3/resultados/validaciones.json`
+
+### Dependencias y ejecución local de AE4 (Streamlit, notebook y PDF)
+
+Todas las dependencias de AE2, AE3 y AE4 están declaradas en `requirements.txt` (`pandas`, `streamlit`, `plotly`, `matplotlib`, `nbformat`, `nbclient`, `ipykernel`, `pypdf`, `pypdfium2`, `datasets`, `pyarrow`, `huggingface-hub`). Ejecuta los comandos desde la raíz del repositorio:
+
+```console
+# 1. Crear entorno virtual e instalar dependencias (Windows)
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+
+# 2. Iniciar la aplicación interactiva de Streamlit
+.venv\Scripts\python.exe -m streamlit run AE4/app/aplicacion_streamlit.py
+
+# 3. Ejecutar el notebook AE4, regenerar figuras y verificar toda la entrega
+.venv\Scripts\python.exe AE4/src/ejecutar_notebook.py
+.venv\Scripts\python.exe -m AE4.src.generar_graficos_pdf
+.venv\Scripts\python.exe AE4/src/verificar_ae4.py
+```
+
+En **macOS o Linux**, reemplaza `.venv\Scripts\python.exe` por `.venv/bin/python`.
+
+### Publicación en Streamlit Community Cloud
+
+Para vincular la aplicación a este repositorio en [share.streamlit.io](https://share.streamlit.io/):
+1. Selecciona el repositorio `jecasadiego/proyecto-integrador-analitica-bicicletas` y la rama activa (`codex/ae2`).
+2. Define como archivo principal (`Main file path`): `AE4/app/aplicacion_streamlit.py`.
+3. Streamlit instalará automáticamente `requirements.txt` y aplicará la configuración visual de `.streamlit/config.toml`.
+
+### Archivos de AE4
+
+```text
+.streamlit/
+└── config.toml
+AE4/
+├── app/
+│   └── aplicacion_streamlit.py
+├── documento/
+│   └── informe_final_AE4.pdf
+├── notebooks/
+│   └── 03_metricas_y_visualizaciones.ipynb
+├── resultados/
+│   ├── figuras/
+│   │   ├── fig01_p1_perfil_horario_media_mediana.png
+│   │   ├── fig02_p1_brecha_y_cobertura_horaria.png
+│   │   ├── fig03_p2_participacion_y_volumen_franjas.png
+│   │   ├── fig04_p3_comparacion_anual_perfiles.png
+│   │   ├── fig05_p3_variacion_interanual_maximos.png
+│   │   └── fig06_cobertura_calidad_registros.png
+│   ├── resumen_metricas_ae4.json
+│   └── tablas_metricas_ae4.csv
+└── src/
+    ├── __init__.py
+    ├── metricas_y_graficos.py
+    ├── generar_graficos_pdf.py
+    ├── ejecutar_notebook.py
+    └── verificar_ae4.py
+```
+
+---
 
 ## AE3 Transformación y respuestas descriptivas
 
